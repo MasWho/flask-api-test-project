@@ -1,0 +1,1 @@
+wev: uwsgi uwsgi.ini
