@@ -1,1 +1,1 @@
-wev: uwsgi uwsgi.ini
+wevb: uwsgi uwsgi.ini
