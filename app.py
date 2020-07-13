@@ -18,18 +18,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'mason'  # Key for authetication
 api = Api(app)
 
-
-# This decorator will cause the method to be called before any requests made to the app
-# sqlalchemy knows which tables, and corresponding columns it must create
-# since in the model classes, we've defined __tablename__ and all of the columns
-# Note, all of the model classes extends the SQLAlchemy.Model class.
-# The database / tables will be created only if it doesn't exist already.
-# important to import the models for sqlalchemy where tables must be created
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
-
 # JWT (JSON web token) creates a new endpoint /auth
 # A username and password will be sent to /auth
 # JWT extension then sends the username and password to the authenticate function
